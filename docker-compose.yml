@@ -1,0 +1,37 @@
+version: "3.8" # Version du format docker compose
+
+services:
+  # Service base de données PostgreSQL
+  db:
+    image: postgres:15 # Image officielle PostgreSQL version 15
+    container_name: odoo_db # Nom du conteneur
+    environment:
+      - POSTGRES_DB=postgres # Base par défaut
+      - POSTGRES_USER=odoo # Utilisateur créé
+      - POSTGRES_PASSWORD=odoo # Mot de passe utilisateur
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+      # Volume persistant → conserve les données même si conteneur supprimé
+
+  # Service application Odoo
+  odoo:
+    image: odoo:17 # Image officielle Odoo 17 Community
+    container_name: odoo_app
+    depends_on:
+      - db # Démarre après la base de données
+    ports:
+      - "8069:8069"
+      # Map port local 8069 vers port conteneur 8069
+      # Accès via http://localhost:8069
+    environment:
+      - HOST=db # Nom du service PostgreSQL
+      - USER=odoo # Utilisateur PostgreSQL
+      - PASSWORD=odoo # Mot de passe PostgreSQL
+    volumes:
+      - ./addons:/mnt/extra-addons
+      # Dossier local pour ajouter nos modules custom
+      # Permet de développer sans reconstruire l'image
+
+# Déclaration des volumes persistants
+volumes:
+  odoo-db-data:

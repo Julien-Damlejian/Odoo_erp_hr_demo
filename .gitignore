@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# Docker volumes
+odoo-db-data/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Environment files
+.env
