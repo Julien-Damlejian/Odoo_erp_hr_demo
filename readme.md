@@ -61,7 +61,27 @@ J'ai créé des employés que j'ai ensuite assigné à un département et un man
 
 J'ai ensuite vérifié que les workflows de validation (congés, notes de frais) sont correctement liés à la hiérarchie.
 
-## 7.
+## 7. Création des utilisateurs liés aux employés
+
+Pour que les workflows RH fonctionnent correctement (congés, dépenses, etc.), chaque employé fictif a été **lié à un utilisateur Odoo**.
+
+- Les utilisateurs ont été créés **via le compte Admin**.
+- En l'absence de serveur mail sur l’environnement local, les mots de passe ont été **définis manuellement** pour chaque utilisateur.
+
+Exemple de comptes créés :
+
+| Employé          | Département              | Rôle                  | Email utilisateur               |
+| ---------------- | ------------------------ | --------------------- | ------------------------------- |
+| Keny Reeves      | Direction                | Directeur Général     | keny.reeves@jdservices.com      |
+| Henry Davil      | RH                       | Manager RH            | henry.davill@jdservices.com     |
+| Albert Downey Jr | Production               | Chef d’équipe         | albert.downeyjr@jdservices.com  |
+| Ana De Larmas    | Administration & Finance | Responsable Comptable | ana.delarmas@jdservices.com     |
+| Pepper Pottsys   | Production               | Technicien            | pepper.pottsys@jdservices.com   |
+| Peter Tarker     | Production               | Technicien            | peter.tarker@jdservices.com     |
+| Mary Jane Patson | Administration           | Assistant             | mary.jane.patson@jdservices.com |
+| Clark Bent       | RH                       | Assistant RH          | clark.bent@jdservices.com       |
+
+> Résultat : l’environnement Odoo est prêt pour tester les workflows multi-utilisateurs (demande de congé, validation, dépense, etc.).
 
 ---
 
