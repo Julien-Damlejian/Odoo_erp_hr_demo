@@ -119,6 +119,31 @@ Depuis le compte admin :
 
 - [x] le workflow de validation
 
+## Réaliser une gestion des notes de frais + Test fonctionnel
+
+### Workflow mis en place
+
+Le processus :
+
+Employé  
+→ Création d'une note de frais  
+→ Soumission de la demande
+
+Manager  
+→ Vérification de la demande  
+→ Validation de la note de frais
+
+### Simulation réalisée
+
+Une simulation de déplacement professionnel avec :
+
+- une dépense **Hôtel**
+- une dépense **Repas professionnel**
+
+--> La demande est transmise automatiquement au manager pour validation.
+
+- Résultat : Configuration permetant de reproduire un processus de gestion des dépenses professionnelles, avec un workflow de validation hiérarchique.
+
 ---
 
 ### start.sh — Démarrage de l’environnement
