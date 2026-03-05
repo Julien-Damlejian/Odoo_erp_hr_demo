@@ -1,5 +1,9 @@
 # 📂 Projet – ERP RH avec Odoo
 
+![Docker](https://img.shields.io/badge/Docker-OK-brightgreen)
+![Workflow Congés](https://img.shields.io/badge/Congés-Tested-brightgreen)
+![Workflow Dépenses](https://img.shields.io/badge/Dépenses-Tested-brightgreen)
+
 ## Objectif du projet
 
 Dans le cadre de ma reconversion vers un poste de **Support Applicatif / Consultant ERP**,  
@@ -12,9 +16,24 @@ ce projet a pour objectif de :
 
 ERP utilisé : **Odoo 17 Community**
 
----
+## **Vous trouverez des captures d'écran du projet dans le détail des étapes ci-dessous.**
 
 # Étapes réalisées jusqu’à présent
+
+- [x] Installation Docker Odoo
+- [x] Création de la société
+- [x] Création des employés
+- [x] Création des utilisateurs
+- [x] Configuration hiérarchie RH
+- [x] Configuration des congés
+- [x] Test du workflow des congés
+- [x] Configuration des notes de frais
+- [x] Test du workflow des notes de frais
+- [ ] Module Recrutement (à venir)
+- [ ] Dashboard RH (à venir)
+- [ ] Custom module Odoo (à venir)
+
+## Détail des étapes
 
 ## 1️. Préparation de l’environnement
 
