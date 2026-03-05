@@ -48,9 +48,13 @@ Afin de simplifier la gestion de l’environnement Odoo, deux scripts Bash ont �
 
 ---
 
+![Workflow signin](images/workflow_signin.png)
+
 ## 3. Créer l’entreprise fictive dans Odoo
 
 ## 4. Installer les modules RH essentiels
+
+![Workflow structureapp](images/workflow_structureapp.png)
 
 - Employés
 - Congés
@@ -65,6 +69,8 @@ J'ai crée 4 départements où je peux ensuite affecter les employés :
 - Ressources Humaines
 - Production / Technique
 - Administration & Finance
+
+![Workflow orga](images/workflow_orga.png)
 
 ## 6. Créer les rôles clés et les employés
 
@@ -87,18 +93,20 @@ Pour que les workflows RH fonctionnent correctement (congés, dépenses, etc.), 
 - Les utilisateurs ont été créés **via le compte Admin**.
 - En l'absence de serveur mail sur l’environnement local, les mots de passe ont été **définis manuellement** pour chaque utilisateur.
 
+![Workflow employes](images/workflow_employes_2.png)
+
 Exemple de comptes créés :
 
-| Employé          | Département              | Rôle                  | Email utilisateur               |
-| ---------------- | ------------------------ | --------------------- | ------------------------------- |
-| Keny Reeves      | Direction                | Directeur Général     | keny.reeves@jdservices.com      |
-| Henry Davil      | RH                       | Manager RH            | henry.davill@jdservices.com     |
-| Albert Downey Jr | Production               | Chef d’équipe         | albert.downeyjr@jdservices.com  |
-| Ana De Larmas    | Administration & Finance | Responsable Comptable | ana.delarmas@jdservices.com     |
-| Pepper Pottsys   | Production               | Technicien            | pepper.pottsys@jdservices.com   |
-| Peter Tarker     | Production               | Technicien            | peter.tarker@jdservices.com     |
-| Mary Jane Patson | Administration           | Assistant             | mary.jane.patson@jdservices.com |
-| Clark Bent       | RH                       | Assistant RH          | clark.bent@jdservices.com       |
+| Employé          | Département              | Rôle                  | Email utilisateur                |
+| ---------------- | ------------------------ | --------------------- | -------------------------------- |
+| Keny Reeves      | Direction                | Directeur Général     | keny.reeves@exemplemail.com      |
+| Henry Davil      | RH                       | Manager RH            | henry.davill@exemplemail.com     |
+| Albert Downey Jr | Production               | Chef d’équipe         | albert.downeyjr@exemplemail.com  |
+| Ana De Larmas    | Administration & Finance | Responsable Comptable | ana.delarmas@exemplemail.com     |
+| Pepper Pottsys   | Production               | Technicien            | pepper.pottsys@exemplemail.com   |
+| Peter Tarker     | Production               | Technicien            | peter.tarker@exemplemail.com     |
+| Mary Jane Patson | Administration           | Assistant             | mary.jane.patson@exemplemail.com |
+| Clark Bent       | RH                       | Assistant RH          | clark.bent@exemplemail.com       |
 
 > Résultat : l’environnement Odoo est prêt pour tester les workflows multi-utilisateurs (demande de congé, validation, dépense, etc.).
 
@@ -120,9 +128,13 @@ Depuis le compte admin :
 - Résultat : Le solde de CP de l'employé passe de 25 jours à 20 jours
 - Le demande est "en attente" de validation
 
+![Workflow Congés](images/workflow_conges_1.png)
+
 - Connexion depuis le compte du Responsable de Production.
 - La manager voit bien la demande de congé de son salarié.
 - Il peut approuver ou refuser la demande.
+
+![Workflow Congés](images/workflow_conges_2.png)
 
 ### Elèments configurés
 
@@ -159,7 +171,11 @@ Une simulation de déplacement professionnel avec :
 - une dépense **Hôtel**
 - une dépense **Repas professionnel**
 
+![Workflow depenses](images/workflow_depense_3.png)
+
 --> La demande est transmise automatiquement au manager pour validation.
+
+![Workflow depenses](images/workflow_depense_2.png)
 
 - Résultat : Configuration permetant de reproduire un processus de gestion des dépenses professionnelles, avec un workflow de validation hiérarchique.
 
@@ -182,32 +198,9 @@ Ce script permet de :
 - Libérer les ressources système
 - Conserver les données (volume PostgreSQL intact)
 
-## Structure du projet :
-
-```text
-Projet_SIRH/
-└── My_OdooERP/
-    ├── docker-compose.yml
-    └── addons/  # pour futurs modules custom
-```
-
 ### Pourquoi Docker ?
 
 - Isolation complète de l’environnement
 - Reproductibilité : la même configuration peut être relancée sur n’importe quelle machine
 - Stabilité : choix de versions validées par Odoo (PostgreSQL 15, Odoo 17)
 - Permet de développer et tester des modules sans affecter le système hôte
-
-## Lancement et arrêt des conteneurs
-
-Depuis le dossier My_OdooERP :
-
-```
-./start.sh
-```
-
-Arrêt des conteneurs :
-
-```
-./stop.sh
-```
