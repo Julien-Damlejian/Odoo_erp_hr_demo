@@ -83,6 +83,42 @@ Exemple de comptes créés :
 
 > Résultat : l’environnement Odoo est prêt pour tester les workflows multi-utilisateurs (demande de congé, validation, dépense, etc.).
 
+## 8. Réaliser un workflows des congés + Test fonctionnel
+
+### Effectuer l'allocation de congés
+
+Depuis le compte admin :
+
+- J'ai créé et configuré un nouveau type de congé "Congés payés"
+- J'ai attribué à ce type de congé une validation à 1 niveau, celui du manager.
+- J'ai attribué à chaque salarié 25 jours de CP
+- Chaque employé possède alors un solde de congés disponible.
+
+### Simulation avec un salarié
+
+- Connexion depuis le compte d'un "technicien de production" sous la direction du responsable de production.
+- Création d'une demande de congés de 5 jours
+- Résultat : Le solde de CP de l'employé passe de 25 jours à 20 jours
+- Le demande est "en attente" de validation
+
+- Connexion depuis le compte du Responsable de Production.
+- La manager voit bien la demande de congé de son salarié.
+- Il peut approuver ou refuser la demande.
+
+### Elèments configurés
+
+- [x] la hiérarchie des employés
+
+- [x] les utilisateurs
+
+- [x] les droits d'accès
+
+- [x] les types de congés
+
+- [x] les allocations de congés
+
+- [x] le workflow de validation
+
 ---
 
 ### start.sh — Démarrage de l’environnement
