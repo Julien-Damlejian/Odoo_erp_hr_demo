@@ -29,7 +29,7 @@ ERP utilisé : **Odoo 17 Community**
 - [x] Test du workflow des congés
 - [x] Configuration des notes de frais
 - [x] Test du workflow des notes de frais
-- [ ] Module Recrutement (à venir)
+- [x] Module Recrutement
 - [ ] Dashboard RH (à venir)
 - [ ] Custom module Odoo (à venir)
 
@@ -97,16 +97,18 @@ Pour que les workflows RH fonctionnent correctement (congés, dépenses, etc.), 
 
 Exemple de comptes créés :
 
-| Employé          | Département              | Rôle                  | Email utilisateur                |
-| ---------------- | ------------------------ | --------------------- | -------------------------------- |
-| Keny Reeves      | Direction                | Directeur Général     | keny.reeves@exemplemail.com      |
-| Henry Davil      | RH                       | Manager RH            | henry.davill@exemplemail.com     |
-| Albert Downey Jr | Production               | Chef d’équipe         | albert.downeyjr@exemplemail.com  |
-| Ana De Larmas    | Administration & Finance | Responsable Comptable | ana.delarmas@exemplemail.com     |
-| Pepper Pottsys   | Production               | Technicien            | pepper.pottsys@exemplemail.com   |
-| Peter Tarker     | Production               | Technicien            | peter.tarker@exemplemail.com     |
-| Mary Jane Patson | Administration           | Assistant             | mary.jane.patson@exemplemail.com |
-| Clark Bent       | RH                       | Assistant RH          | clark.bent@exemplemail.com       |
+| Employé                    | Département              | Rôle                   | Email utilisateur         |
+| -------------------------- | ------------------------ | ---------------------- | ------------------------- |
+| Keny Reeves                | Direction                | Directeur Général      | prenom.nom@jdservices.com |
+| Henry Davil                | RH                       | Manager RH             | prenom.nom@jdservices.com |
+| Albert Downey Jr           | Production               | Chef d’équipe          | prenom.nom@jdservices.com |
+| Ana De Larmas              | Administration & Finance | Responsable Comptable  | prenom.nom@jdservices.com |
+| Pepper Pottsys             | Production               | Technicien             | prenom.nom@jdservices.com |
+| Peter Tarker               | Production               | Technicien             | prenom.nom@jdservices.com |
+| Mary Jane Patson           | Administration           | Assistant              | prenom.nom@jdservices.com |
+| Clark Bent                 | RH                       | Assistant RH           | prenom.nom@jdservices.com |
+| (recrutement) Bruce Wayner | Ventes                   | Responsable commercial | prenom.nom@jdservices.com |
+| (recrutement) Nick Grayson | Ventes                   | Commercial B2B         | prenom.nom@jdservices.com |
 
 > Résultat : l’environnement Odoo est prêt pour tester les workflows multi-utilisateurs (demande de congé, validation, dépense, etc.).
 
@@ -150,7 +152,7 @@ Depuis le compte admin :
 
 - [x] le workflow de validation
 
-## Réaliser une gestion des notes de frais + Test fonctionnel
+## 9. Réaliser une gestion des notes de frais + Test fonctionnel
 
 ### Workflow mis en place
 
@@ -178,6 +180,17 @@ Une simulation de déplacement professionnel avec :
 ![Workflow depenses](images/workflow_depense_2.png)
 
 - Résultat : Configuration permetant de reproduire un processus de gestion des dépenses professionnelles, avec un workflow de validation hiérarchique.
+
+## 10. Réaliser des recrutements via le module recrutement
+
+Simulation d'un processus complet de recrutement :
+
+- création d'un nouveau département (Ventes)
+- recrutement d'un Responsable commercial
+- structuration du département
+- recrutement d'un Commercial B2B rattaché au manager
+
+Le processus permet de transformer un candidat en employé directement dans l'ERP, puis de l'associer directement à un utilisateur et de créer ses identifiants (email, mot de passe).
 
 ---
 
