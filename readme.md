@@ -3,6 +3,7 @@
 ![Docker](https://img.shields.io/badge/Docker-OK-brightgreen)
 ![Workflow Congés](https://img.shields.io/badge/Congés-Tested-brightgreen)
 ![Workflow Dépenses](https://img.shields.io/badge/Dépenses-Tested-brightgreen)
+![Workflow Recrutements](https://img.shields.io/badge/Recrutements-Tested-brightgreen)
 
 ## Objectif du projet
 
